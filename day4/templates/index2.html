@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p>if判断</p>
+    <p>{{ request.args.get("state") }}</p>
+    {% if request.args.get("state") == "123456" %}
+        <p>state的值是123456</p>
+    {% endif %}
+
+    <hr>
+
+    {% if request.args.get("num", 0) | int % 2 == 0 %}
+<p>num为偶数,值为{{ request.args.get("num", 0) }}</p>
+    {% else %}
+<p>num为奇数,值为{{ request.args.get("num", 0) }}</p>
+    {% endif %}
+    <hr>
+    {% if score < 60 %}
+    <p>本次考试不及格</p>
+    {% elif score < 80 %}
+    <p>本次考试不够优秀,继续努力</p>
+    {% else %}
+    <p>牛逼</p>
+    {% endif %}
+
+</body>
+</html>

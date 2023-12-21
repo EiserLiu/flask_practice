@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .table{
+        border: 1px solid red;
+        border-collapse: collapse;
+        width: 800px
+        }
+        .table tr th,
+        .table tr td{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>用户名</th>
+            <th>手机号</th>
+        </tr>
+
+        {% for user in user_list %}
+        <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.mobile | mobile }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>
